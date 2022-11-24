@@ -1,0 +1,37 @@
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading">
+    <div class="repo-container" *ngFor="let repo of (repos$ | async)">
+        <div class="repo" (click)="redirectTo(repo.html_url)">
+            <h2 class="repo-name">{{ repo.name }}</h2>
+            <div class="repo-language-container" *ngIf="repo.language">
+                <div [style.background-color]="colors[repo.language]?.color" class="repo-language-blob"></div>
+                <div class="repo-language">{{ repo.language }}</div>
+            </div>
+            <div class="repo-details">{{ repo.description }}</div>
+            <div class="repo-stat-container">
+                <div class="repo-stat">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                    </svg>  
+                    {{ repo.stargazers_count }}
+                </div>
+                <svg width="15" viewBox="0 0 15 15"><path fill="currentColor" d="M9.875 7.5a2.375 2.375 0 1 1-4.75 0a2.375 2.375 0 0 1 4.75 0Z"/></svg>
+                <div class="repo-stat">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>  
+                    {{ repo.watchers_count }}
+                </div>
+                <svg width="15" viewBox="0 0 15 15"><path fill="currentColor" d="M9.875 7.5a2.375 2.375 0 1 1-4.75 0a2.375 2.375 0 0 1 4.75 0Z"/></svg>
+                <div class="repo-stat">
+                    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" stroke="transparent" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+                    </svg>
+                    {{ repo.forks_count }}
+                </div>
+            </div>
+            <div class="repo-timestamp">{{ repo.created_at | date }}</div>
+        </div>
+    </div>
+</div>

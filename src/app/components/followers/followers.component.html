@@ -1,0 +1,6 @@
+<div class="follower-container" *ngFor="let follower of (followers$ | async)">
+    <div class="follower">
+        <img src="{{ follower.avatar_url }}" alt="">
+        <a href="/{{ follower.login }}" target="_blank">@{{ follower.login }}</a>
+    </div>
+</div>

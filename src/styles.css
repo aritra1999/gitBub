@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-pri: #f8fafc;
+  --bg-sec: #f1f5f9;
+  --bg-ter: #e2e8f0;
+  --bg-opp: #111827;
+  --text-pri: #111827;
+  --text-sec: #1f2937;
+  --text-ter: #475569;
+  --text-opp: #f8fafc;
+  --pop-pri: #3b82f6;
+  --pop-sec: #2563eb;
+  --pop-ter: #1e40af;
+  --border-radius: 10px;
+}
+
+[data-theme="dark"] {
+  --bg-pri: #111827;
+  --bg-sec: #1f2937;
+  --bg-ter: #374151;
+  --bg-opp: #111827;
+  --text-pri: #f8fafc;
+  --text-sec: #f1f5f9;
+  --text-ter: #cbd5e1;
+  --text-opp: #f8fafc;
+  --pop-pri: #3b82f6;
+  --pop-sec: #2563eb;
+  --pop-ter: #1e40af;
+  --border-radius: 10px;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-pri);
+  color: var(--text-pri);
+  font-size: 0.85rem;
+  margin: 0; 
+  max-width: 100vw;
+}
+
+.container {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+a {
+  color: var(--text-pri);
+  text-decoration: none;
+}
+
+@media (min-width: 770px) {
+  .container {
+    width: 770px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}

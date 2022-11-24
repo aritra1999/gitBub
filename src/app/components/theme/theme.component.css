@@ -1,0 +1,16 @@
+.theme-toggle-container {
+    display: flex;
+    justify-items: center;
+    vertical-align: center;
+}
+
+.theme-toggle-icon {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    background: var(--bg-sec);
+    height: 1.5rem;
+}
+
+.theme-toggle-icon:hover {
+    background: var(--bg-ter);
+}
