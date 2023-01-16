@@ -5,6 +5,12 @@
     border-radius: var(--border-radius);
 }
 
+.search-container > form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .search-input {
     background: transparent;    
     color: var(--text-pri);
